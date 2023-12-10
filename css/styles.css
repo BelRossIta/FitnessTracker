@@ -1,0 +1,156 @@
+/* Background color is #2F2F61
+Form and Nav button color is #C9CAFC
+Nav button color is #3F3A1C
+Header/Title color is #DCC789
+ */
+
+ /* FONT
+     font-family: 'EB Garamond', serif;
+
+    font-family: 'Kanit', sans-serif; Headers
+
+    font-family: 'Libre Franklin', sans-serif; is also the nav menu text*/
+
+
+/* General Styling */
+
+header{
+    font-family: 'Kanit', sans-serif;
+    color:#DCC789;
+}
+
+h1{
+    font-family: 'Kanit', sans-serif;
+    color:#DCC789;
+}
+
+p{
+    font-family: 'Libre Franklin', sans-serif;
+    background-color: #C9CAFC;
+    margin-left: 10% ;
+    margin-right:10%;
+}
+
+body{
+    background-color: #2F2F61;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-top: 10vh;
+    /* font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  */
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 70rem;
+    margin: 0 auto;
+    font-size: 112%;
+    
+}
+
+.flex-container{
+    display:flex;
+    flex-direction: row;
+   
+    
+}
+
+.flex-item{
+    background-color: #C9CAFC;
+    padding: 5px;
+    margin: 5px;
+    font-family: 'Libre Franklin', sans-serif;
+
+}
+
+.flex-item a:link {
+    color:#3F3A1C;
+}
+
+.flex-item a:visited{
+    color:#836408;
+}
+
+.flex-item a:hover{
+    color:aqua;
+}
+
+/* styleing for Tabs for file folder thingy */
+
+.tabs{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.tabs label{  /* This are the other tab not the first on*/
+    order: 1;
+    display:block;
+    cursor:pointer;
+    padding: 1rem 2rem;
+    margin-right:1rem;
+    background: green;
+    transition: ease-in 0.4s;
+
+}
+
+.tabs .tab{  /* This is the body, where text goes*/
+    order:90;
+    flex-grow:1;
+    width:100px;
+    display: none;
+    background: red;
+    padding:1rem;
+    
+}
+
+.tabs input[type="radio"]{   /* This takes off the radio buttons, the circles on the left of the list items*/
+    display:none;
+}
+
+.tabs input[type="radio"]:checked + label{   /*This is makes the clicked tab a different color */
+    background: white;
+}
+
+.tabs input[type="radio"]:checked + label + .tab{
+    display:block;
+}
+
+.innerTab{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.innerTab label{ /* it works for my inner tabs, making it look like the outer tabs*/
+    order:1;
+    display:block;
+    padding:1rem 2rem;
+    margin-right:1rem;
+    background:yellow;
+    transition: ease-in 0.4s;
+}
+
+.innerTab .bodyBox{
+    order:99;
+    flex-grow:1;
+    width:100px;
+    display:none;  /*I believe this styling is being inherited from the parent display from the .tabs .tab section that styles the same part. */
+    background:pink;
+    padding:1rem;
+    border: #2F2F61 solid 3px;
+}
+
+.innerTab input[type="radio"]{
+    display:none;
+}
+.innerTab input[type="radio"]:checked + label{
+    background:green;
+}
+
+.innerTab input[type="radio"]:checked + label + .bodyBox{
+    display:block;
+}
+
+.monday{
+    background: pink;
+    padding-left:1rem 2rem;
+    margin-right:2rem;
+    
+
+}
