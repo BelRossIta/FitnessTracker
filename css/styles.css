@@ -11,7 +11,24 @@ Header/Title color is #DCC789
 
     font-family: 'Libre Franklin', sans-serif; is also the nav menu text*/
 
+:root{
+    --paragraphBackground: #B8B8E0;
+    --pageBackground:#2F2F61;
+    --labelForRepMaxTable:#E0DEB8;
+    --backgroundForNavMenu:#B8B8E0;
+    --navLinkColor:#44433a;
+    --navLinkHover:#A19E75;
+    --navLinkVisited:#9E94B6;
+    --tabBoxBackground:#802626;
+    --table1A:white;
+    --table1B:#8F9756;
+    --table1C:#26805E;
+    --table1D:#FFCCCC;
+    --table1E:#CCFFEC;
+    --table1F:#9C7E4E;
+    --table1G:#9791A3;
 
+}
 /* General Styling */
 
 header{
@@ -24,15 +41,29 @@ h1{
     color:#DCC789;
 }
 
+h2{
+    font-family: 'Kanit', sans-serif;
+    color:antiquewhite;
+}
+
+
+
+
+
 p{
     font-family: 'Libre Franklin', sans-serif;
-    background-color: #C9CAFC;
+    background-color: var(--paragraphBackground);
     margin-left: 10% ;
     margin-right:10%;
 }
 
+label{
+    color:var(--paragraphBackground);
+    
+}
+
 body{
-    background-color: #2F2F61;
+    background-color: var(--pageBackground);
     min-height: 100vh;
     box-sizing: border-box;
     padding-top: 10vh;
@@ -44,7 +75,20 @@ body{
     font-size: 112%;
     
 }
+/* Finding Traingin Max styling */
+#trainMaxFinder{
+    background-color: none;
+    
+}
+.maxlabel{
+    color:var(--labelForRepMaxTable);
+}
 
+#trainMaxCaption{
+    color:var(--labelForRepMaxTable);
+}
+
+/* The folders tabs */
 .flex-container{
     display:flex;
     flex-direction: row;
@@ -53,23 +97,23 @@ body{
 }
 
 .flex-item{
-    background-color: #C9CAFC;
+    background-color: var(--backgroundForNavMenu);
     padding: 5px;
     margin: 5px;
     font-family: 'Libre Franklin', sans-serif;
-
+    
 }
 
 .flex-item a:link {
-    color:#3F3A1C;
+    color:var(--navLinkColor);
 }
 
 .flex-item a:visited{
-    color:#836408;
+    color:var(--navLinkVisited);
 }
 
 .flex-item a:hover{
-    color:aqua;
+    color:var(--navLinkHover);
 }
 
 /* styleing for Tabs for file folder thingy */
@@ -84,10 +128,12 @@ body{
     display:block;
     cursor:pointer;
     padding: 1rem 2rem;
-    margin-right:1rem;
+    margin-right:0.2rem;
     background: green;
     transition: ease-in 0.4s;
-
+    width:5.8rem;
+    border-top-right-radius: 15%;
+    border-top-left-radius: 15%;
 }
 
 .tabs .tab{  /* This is the body, where text goes*/
@@ -95,8 +141,8 @@ body{
     flex-grow:1;
     width:100px;
     display: none;
-    background: red;
-    padding:1rem;
+    background: var(--tabBoxBackground);
+    padding:0.5rem;
     
 }
 
@@ -112,45 +158,50 @@ body{
     display:block;
 }
 
-.innerTab{
-    display:flex;
-    flex-wrap:wrap;
-}
-
-.innerTab label{ /* it works for my inner tabs, making it look like the outer tabs*/
-    order:1;
-    display:block;
-    padding:1rem 2rem;
-    margin-right:1rem;
-    background:yellow;
-    transition: ease-in 0.4s;
-}
-
-.innerTab .bodyBox{
-    order:99;
-    flex-grow:1;
-    width:100px;
-    display:none;  /*I believe this styling is being inherited from the parent display from the .tabs .tab section that styles the same part. */
-    background:pink;
-    padding:1rem;
-    border: #2F2F61 solid 3px;
-}
-
-.innerTab input[type="radio"]{
-    display:none;
-}
-.innerTab input[type="radio"]:checked + label{
-    background:green;
-}
-
-.innerTab input[type="radio"]:checked + label + .bodyBox{
-    display:block;
-}
-
-.monday{
-    background: pink;
-    padding-left:1rem 2rem;
-    margin-right:2rem;
+th{
+    text-align:center;
     
-
 }
+
+/* Sunday Table styling */
+#tracker1A{
+    width:100%;
+    background: var(--table1A);
+}
+/* Monday Table styling */
+#tracker1B{
+    width:100%;
+    background: var(--table1B);
+}
+/* Tuesday Table styling */
+#tracker1C{
+    width:100%;
+    background:var(--table1C);
+}
+/* Wednesday Table styling */
+#tracker1D{
+    width:100%;
+    background: var(--table1D);
+}
+/* Thursday Table styling */
+#tracker1E{
+    width:100%;
+    background: var(--table1E);
+}
+/* Friday Table styling */
+#tracker1F{
+    width:100%;
+    background: var(--table1F);
+}
+/* Saturday Table styling */
+#tracker1G{
+    width:100%;
+    background: var(--table1G);
+}
+
+ 
+#maxText{
+    color:white;
+}
+
+/* 1 rep max table */
