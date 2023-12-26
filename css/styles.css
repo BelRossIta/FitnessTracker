@@ -35,7 +35,7 @@ Header/Title color is #DCC789
     --table1E:#CCFFEC;
     --table1F:#9C7E4E;
     --table1G:#9791A3;
-
+    
 }
 /* General Styling */
 
@@ -64,8 +64,7 @@ p{
 body{
     background-color: var(--pageBackground);
     
-    
-}
+
 
 label, th, td{
     color: var(--table1E);
@@ -104,4 +103,4 @@ a :active{
 /* output styling */
 #results{
     color:white;
-}
+
