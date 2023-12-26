@@ -3,17 +3,18 @@
     <head>
         <!-- Meta name and other meta things -->
         <meta charset="UTF-8">
-        <meta name="description" content="Workout Planner" />
-        <meta name="keywords" keywords="Workout, planner, gym, fitness, app" />
+        <meta name="description" content="Workout Planner" >
+        <meta name="keywords" content="Workout, planner, gym, fitness, app" >
         <!-- For mobile Device -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Links to CSS -->
-        <link rel= "stylesheet" a href="css/styles.css">
+        <link rel= "stylesheet" href="css/styles.css">
         <!-- Link to Javascript -->
-        <script src="/javascript/workoutplanner.js " dever></script>
+        <script src="/javascript/workoutplanner.js " defer></script>
         <!-- Link for fonts -->
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Kanit:wght@600&family=Libre+Franklin:ital,wght@0,200;0,300;0,400;0,500;1,200&display=swap" rel="stylesheet"> 
         
+        <title>A One-Lift-A-Day workout planner for the 5-3-1 program</title>
 
     </head>
     <body>
@@ -35,192 +36,943 @@
         <!-- give the name of each div 'tabs' so that the styling can be applyed -->
             <main>
                 <h1>Meso Cycle Planner</h1>
+                <h2>Finding Your Training Max:</h2>
+                
+                    <div class="gridTM">
+                        <label for="wLifted">Weight Lifted:</label>
+                        <input type="text" id="wLifted" class="wLifted" name="wLifted">
+
+                        <label for="repsDone">Reps Done:</label>
+                        <input type="text" id="repsDone" class="repsDone" name="repsDone">
+
+                        <label for="trainMax">Training Max</label>
+                        <input type="text" id="trainMax" class="trainMax" name="trainMax">
+                    </div>
+                    <h2>Or if you already know your 1 rep max:</h2>
+                    <!-- <h2> Or if you already know your 1 rep max:</h2> -->
+                        <div class="gridTrainMax">
+                            <table id="trainMaxFinder">
+                                <thead>
+                                        <tr class="maxlabel">
+                                            <th>&nbsp;</th>
+                                            <th scope="col" >
+                                                Squat
+                                            
+                                            </th>
+                                            <th>Bench</th>
+                                            <th>Deadlift</th>
+                                            <th>Military Press/Standing Press</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="maxInput">
+                                            <td id="maxText">1 Rep Max</td>
+                                            <td>
+                                                <input type="text" name="squatMax" id="squatMax">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="benchMax" id="benchMax">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="deadMax" id="deadMax">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="pressMax" id="pressMax">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                            </table>
+
+                        </div>
+              
+               
                     <div class="tabs">
                         <!-- Tab One -->
                         
                         <input type="radio" id="tabOne" name="tabs" >
-                        <label for="tabOne"> Week One</label>
+                        <label for="tabOne">Sunday</label>
                             <div class="tab">
-                                <div class="innerTab">
-                                    <input type="radio" id="innerTab" name="innerTab">
-                                    <label for="innerTab">Monday</label>
                                     <div class="bodyBox">
-                                        <table>
+                                        <table id="tracker1A">
                                             <tbody>
                                                 <tr>
-                                                    <td>aofjaeijfoae</td>
-                                                    <td>ajfgaoejfoaejfoaej</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>aofjaeijfoae</td>
+                                                    <th>Main Lifts</th>
+                                                       <th colspan="3">
+                                                        <select name="exercise" id="exercise">
+                                                            <option value="">--Please Choose Exercise--</option>
+                                                            <option>Bench</option>
+                                                            <option>Military Press/Overhead Press</option>
+                                                            <option>Deadlift</option>
+                                                            <option>Sqaut</option>
+                                                            </select>
+                                                    </th>
                                                 </tr>
                                                 <tr>
-                                                    <td>aofjaeijfoae</td>
+                                                    <th>Sets</th>
+                                                    <th>Intensity</th>
+                                                    <th>Weight</th>
+                                                    <th>Reps</th>
                                                 </tr>
                                                 <tr>
-                                                    <td>aofjaeijfoae</td>
+                                                    <td>Set 1</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    <td>Set 2</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Set 3</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Supplemental Lifts</th>
+                                                    <th colspan="3">
+                                                        <select name="exercise" id="exercise">
+                                                            <option value="empty">--Please Supplemental Exercise--</option>
+                                                            <option value="Bench Supplemental Lifts">----BENCH PRESS/PRESS SUPPLEMENTAL LIFTS----</option>
+                                                            <option value="Bench Press with different grip width">Bench Press with different grip width</option>
+                                                            <option value="Incline Press">Incline Press</option>
+                                                            <option value="Floor Press">Floor Press</option>
+                                                            <option value="Football Bar Bench Press">Football Bar Bench Press</option>
+                                                            <option value="Football Bar Inline Press">Football Bar Inline Press</option>
+                                                            <option value="Football Bar Press">Football Bar Press</option>
+                                                            <option value="Football Bar Floor Press">Football Bar Floor Press</option>
+                                                            <option value="Log Bar Bench Press">Log Bar Bench Press</option>
+                                                            <option value="Log Bar Incline Press">Log Bar Incline Press</option>
+                                                            <option value="Log Bar Floor Press">Log Bar Floor Press</option>
+                                                            <option value="Log Bar Press">Log Bar Press</option>
+                                                            <option value="Deadlift Supplemental Lifts">----DEADLIFT SUPPLEMENTAL LIFTS-----</option>
+                                                            <option value="Deficit Deadlift">Deficit Deadlift</option>
+                                                            <option value="Rack Pull">Rack Pull</option>
+                                                            <option value="Pull from Blocks">Pull from Blocks</option>
+                                                            <option value="Snatch Grip Deadlift">Snatch Grip Deadlift</option>
+                                                            <option value="Fat Bar Deadlift">Fat Bar Deadlift</option>
+                                                            <option value="Double Overhand Deadlift">Double Overhand Deadlift</option>
+                                                            <option value="Trap Bar Deadlift">Trap Bar Deadlift</option>
+                                                            <option value="Squat Supplemental Lifts">----SQAUTS SUPPLEMENTAL LIFTS-----</option>
+                                                            <option value="Front Squat">Front Squat</option>
+                                                            <option value="Box Squat">Box Squat- A Variety of different bars can be used as well as the front squat</option>
+                                                            <option value="Squat with Safety Squat Bar">Squat with Safety Squat Bar</option>
+                                                            <option value="Manta Ray Squa">Manta Ray Squat</option>
+                                                            </select>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Sets</th>
+                                                    <th>Intensity</th>
+                                                    <th>Weight</th>
+                                                    <th>Reps</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Set 1</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Set 2</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Set 3</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Set 4</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Set 5</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
                                                 </tr>
                                             </tbody>
                                         </table>
-                                    </div>
-
-                                    <input type="radio" id="innerTab" name="innerTab">
-                                    <label for="innerTab">Tuesday</label>
-                                    <div class="bodyBox">
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td>aofjaeijfoae</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>aofjaeijfoae</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>aofjaeijfoae</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>aofjaeijfoae</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-
-                                    <input type="radio" id="innerTab" name="innerTab">
-                                    <label for="innerTab">Wednesday</label>
-                                    <div class="bodyBox">
-                                       <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td>aofjaeijfoae</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>aofjaeijfoae</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>aofjaeijfoae</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>aofjaeijfoae</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-
-                                    <input type="radio" id="innerTab" name="innerTab">
-                                    <label for="innerTab">Thursday</label>
-                                    <div class="bodyBox">
-
-                                    </div>
-
-                                    <input type="radio" id="innerTab" name="innerTab">
-                                    <label for="innerTab">Friday</label>
-                                    <div class="bodyBox">
-
-                                    </div>
-
-                                    <input type="radio" id="innerTab" name="innerTab">
-                                    <label for="innerTab">Saturday</label>
-                                    <div class="bodyBox">
-
-                                    </div>
-
-                                    <input type="radio" id="innerTab" name="innerTab">
-                                    <label for="innerTab">Sunday</label>
-                                    <div class="bodyBox">
-                                        <p>zgaddgzgdfgzdgzfdgzfg</p>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         <!-- Tab two -->
                         <input type="radio" id="tabTwo" name="tabs">
-                        <label for="tabTwo"> Tab Two</label>
+                        <label for="tabTwo">Monday</label>
                             <div class="tab">
-                               
+                               <form>
+                                <table id="tracker1B">   
+                                    <tbody>
+                                        <tr>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Main Lifts</th>
+                                            <th colspan="3" scope="row" >
+                                                <select name="mainLifts" id="mainLifts">
+                                                    <option value="">--Please Choose Exercise--</option>
+                                                    <option>Bench</option>
+                                                    <option>Military Press/Overhead Press</option>
+                                                    <option>Deadlift</option>
+                                                    <option>Sqaut</option>
+                                                    </select>
+                                            </th>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <th scope="col">Sets</th>
+                                            <th scope="col">Intensity</th>
+                                            <th scope="col">Weight</th>
+                                            <th scope="col">Reps</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                           
+                                        </tr>
+                                        <tr>
+                                            <td>Set 2</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 3</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Supplemental Lifts</th>
+                                            <th colspan="3">
+                                                <select name="supplementalLifts" id="supplementalLifts">
+                                                    <option value="empty">--Please Supplemental Exercise--</option>
+                                                    <option value="Bench Supplemental Lifts">----BENCH PRESS/PRESS SUPPLEMENTAL LIFTS----</option>
+                                                    <option value="Bench Press with different grip width">Bench Press with different grip width</option>
+                                                    <option value="Incline Press">Incline Press</option>
+                                                    <option value="Floor Press">Floor Press</option>
+                                                    <option value="Football Bar Bench Press">Football Bar Bench Press</option>
+                                                    <option value="Football Bar Inline Press">Football Bar Inline Press</option>
+                                                    <option value="Football Bar Press">Football Bar Press</option>
+                                                    <option value="Football Bar Floor Press">Football Bar Floor Press</option>
+                                                    <option value="Log Bar Bench Press">Log Bar Bench Press</option>
+                                                    <option value="Log Bar Incline Press">Log Bar Incline Press</option>
+                                                    <option value="Log Bar Floor Press">Log Bar Floor Press</option>
+                                                    <option value="Log Bar Press">Log Bar Press</option>
+                                                    <option value="Deadlift Supplemental Lifts">----DEADLIFT SUPPLEMENTAL LIFTS-----</option>
+                                                    <option value="Deficit Deadlift">Deficit Deadlift</option>
+                                                    <option value="Rack Pull">Rack Pull</option>
+                                                    <option value="Pull from Blocks">Pull from Blocks</option>
+                                                    <option value="Snatch Grip Deadlift">Snatch Grip Deadlift</option>
+                                                    <option value="Fat Bar Deadlift">Fat Bar Deadlift</option>
+                                                    <option value="Double Overhand Deadlift">Double Overhand Deadlift</option>
+                                                    <option value="Trap Bar Deadlift">Trap Bar Deadlift</option>
+                                                    <option value="Squat Supplemental Lifts">----SQAUTS SUPPLEMENTAL LIFTS-----</option>
+                                                    <option value="Front Squat">Front Squat</option>
+                                                    <option value="Box Squat">Box Squat- A Variety of different bars can be used as well as the front squat</option>
+                                                    <option value="Squat with Safety Squat Bar">Squat with Safety Squat Bar</option>
+                                                    <option value="Manta Ray Squa">Manta Ray Squat</option>
+                                                    </select>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>Sets</th>
+                                            <th>Intensity</th>
+                                            <th>Weight</th>
+                                            <th>Reps</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Set 2</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 3</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 4</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 5</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                               </form>
                             
                             </div>
                         <!-- Tab Three -->
                         <input type="radio" id="tabThree" name="tabs">
-                        <label for="tabThree"> Tab Three</label>
+                        <label for="tabThree">Tuesday</label>
                             <div class="tab">
-                                
+                                <table id="tracker1C">
+                                    <tbody>
+                                        <tr>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Main Lifts</th>
+                                            <th colspan="3" scope="row" >
+                                                <select name="mainLifts" id="mainLifts">
+                                                    <option value="">--Please Choose Exercise--</option>
+                                                    <option>Bench</option>
+                                                    <option>Military Press/Overhead Press</option>
+                                                    <option>Deadlift</option>
+                                                    <option>Sqaut</option>
+                                                    </select>
+                                            </th>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <th scope="col">Sets</th>
+                                            <th scope="col">Intensity</th>
+                                            <th scope="col">Weight</th>
+                                            <th scope="col">Reps</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                           
+                                        </tr>
+                                        <tr>
+                                            <td>Set 2</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 3</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Supplemental Lifts</th>
+                                            <th colspan="3">
+                                                <select name="supplementalLifts" id="supplementalLifts">
+                                                    <option value="empty">--Please Supplemental Exercise--</option>
+                                                    <option value="Bench Supplemental Lifts">----BENCH PRESS/PRESS SUPPLEMENTAL LIFTS----</option>
+                                                    <option value="Bench Press with different grip width">Bench Press with different grip width</option>
+                                                    <option value="Incline Press">Incline Press</option>
+                                                    <option value="Floor Press">Floor Press</option>
+                                                    <option value="Football Bar Bench Press">Football Bar Bench Press</option>
+                                                    <option value="Football Bar Inline Press">Football Bar Inline Press</option>
+                                                    <option value="Football Bar Press">Football Bar Press</option>
+                                                    <option value="Football Bar Floor Press">Football Bar Floor Press</option>
+                                                    <option value="Log Bar Bench Press">Log Bar Bench Press</option>
+                                                    <option value="Log Bar Incline Press">Log Bar Incline Press</option>
+                                                    <option value="Log Bar Floor Press">Log Bar Floor Press</option>
+                                                    <option value="Log Bar Press">Log Bar Press</option>
+                                                    <option value="Deadlift Supplemental Lifts">----DEADLIFT SUPPLEMENTAL LIFTS-----</option>
+                                                    <option value="Deficit Deadlift">Deficit Deadlift</option>
+                                                    <option value="Rack Pull">Rack Pull</option>
+                                                    <option value="Pull from Blocks">Pull from Blocks</option>
+                                                    <option value="Snatch Grip Deadlift">Snatch Grip Deadlift</option>
+                                                    <option value="Fat Bar Deadlift">Fat Bar Deadlift</option>
+                                                    <option value="Double Overhand Deadlift">Double Overhand Deadlift</option>
+                                                    <option value="Trap Bar Deadlift">Trap Bar Deadlift</option>
+                                                    <option value="Squat Supplemental Lifts">----SQAUTS SUPPLEMENTAL LIFTS-----</option>
+                                                    <option value="Front Squat">Front Squat</option>
+                                                    <option value="Box Squat">Box Squat- A Variety of different bars can be used as well as the front squat</option>
+                                                    <option value="Squat with Safety Squat Bar">Squat with Safety Squat Bar</option>
+                                                    <option value="Manta Ray Squa">Manta Ray Squat</option>
+                                                    </select>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>Sets</th>
+                                            <th>Intensity</th>
+                                            <th>Weight</th>
+                                            <th>Reps</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Set 2</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 3</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 4</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 5</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                                 
                             </div>
                         <!-- Tab four -->
                         <input type="radio" id="tabFour" name="tabs">
-                        <label for="tabFour"> Tab Four</label>
+                        <label for="tabFour">Wednesday</label>
                             <div class="tab">
 
-                                <div class="outerTab">
-
-                                </div>
-
-                                <div class="outerTab">
-
-                                </div>
-
-                                <div class="outerTab">
-
-                                </div>
+                                <table id="tracker1D">
+                                    <tbody>
+                                        <tr>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Main Lifts</th>
+                                            <th colspan="3" scope="row" >
+                                                <select name="mainLifts" id="mainLifts">
+                                                    <option value="">--Please Choose Exercise--</option>
+                                                    <option>Bench</option>
+                                                    <option>Military Press/Overhead Press</option>
+                                                    <option>Deadlift</option>
+                                                    <option>Sqaut</option>
+                                                    </select>
+                                            </th>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <th scope="col">Sets</th>
+                                            <th scope="col">Intensity</th>
+                                            <th scope="col">Weight</th>
+                                            <th scope="col">Reps</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                           
+                                        </tr>
+                                        <tr>
+                                            <td>Set 2</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 3</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Supplemental Lifts</th>
+                                            <th colspan="3">
+                                                <select name="supplementalLifts" id="supplementalLifts">
+                                                    <option value="empty">--Please Supplemental Exercise--</option>
+                                                    <option value="Bench Supplemental Lifts">----BENCH PRESS/PRESS SUPPLEMENTAL LIFTS----</option>
+                                                    <option value="Bench Press with different grip width">Bench Press with different grip width</option>
+                                                    <option value="Incline Press">Incline Press</option>
+                                                    <option value="Floor Press">Floor Press</option>
+                                                    <option value="Football Bar Bench Press">Football Bar Bench Press</option>
+                                                    <option value="Football Bar Inline Press">Football Bar Inline Press</option>
+                                                    <option value="Football Bar Press">Football Bar Press</option>
+                                                    <option value="Football Bar Floor Press">Football Bar Floor Press</option>
+                                                    <option value="Log Bar Bench Press">Log Bar Bench Press</option>
+                                                    <option value="Log Bar Incline Press">Log Bar Incline Press</option>
+                                                    <option value="Log Bar Floor Press">Log Bar Floor Press</option>
+                                                    <option value="Log Bar Press">Log Bar Press</option>
+                                                    <option value="Deadlift Supplemental Lifts">----DEADLIFT SUPPLEMENTAL LIFTS-----</option>
+                                                    <option value="Deficit Deadlift">Deficit Deadlift</option>
+                                                    <option value="Rack Pull">Rack Pull</option>
+                                                    <option value="Pull from Blocks">Pull from Blocks</option>
+                                                    <option value="Snatch Grip Deadlift">Snatch Grip Deadlift</option>
+                                                    <option value="Fat Bar Deadlift">Fat Bar Deadlift</option>
+                                                    <option value="Double Overhand Deadlift">Double Overhand Deadlift</option>
+                                                    <option value="Trap Bar Deadlift">Trap Bar Deadlift</option>
+                                                    <option value="Squat Supplemental Lifts">----SQAUTS SUPPLEMENTAL LIFTS-----</option>
+                                                    <option value="Front Squat">Front Squat</option>
+                                                    <option value="Box Squat">Box Squat- A Variety of different bars can be used as well as the front squat</option>
+                                                    <option value="Squat with Safety Squat Bar">Squat with Safety Squat Bar</option>
+                                                    <option value="Manta Ray Squa">Manta Ray Squat</option>
+                                                    </select>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>Sets</th>
+                                            <th>Intensity</th>
+                                            <th>Weight</th>
+                                            <th>Reps</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 2</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 3</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 4</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 5</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         <!-- Tab Five -->
                         <input type="radio" id="tabFive" name="tabs">
-                        <label for="tabFive"> Tab Five</label>
+                        <label for="tabFive">Thursday</label>
                             <div class="tab">
 
-                                <div class="outerTab">
-
-                                </div>
-
-                                <div class="outerTab">
-
-                                </div>
-
-                                <div class="outerTab">
-
-                                </div>
+                                <table id="tracker1E">
+                                    <tbody>
+                                        <tr>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Main Lifts</th>
+                                            <th colspan="3" scope="row" >
+                                                <select name="mainLifts" id="mainLifts">
+                                                    <option value="">--Please Choose Exercise--</option>
+                                                    <option>Bench</option>
+                                                    <option>Military Press/Overhead Press</option>
+                                                    <option>Deadlift</option>
+                                                    <option>Sqaut</option>
+                                                    </select>
+                                            </th>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <th scope="col">Sets</th>
+                                            <th scope="col">Intensity</th>
+                                            <th scope="col">Weight</th>
+                                            <th scope="col">Reps</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                           
+                                        </tr>
+                                        <tr>
+                                            <td>Set 2</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 3</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Supplemental Lifts</th>
+                                            <th colspan="3">
+                                                <select name="supplementalLifts" id="supplementalLifts">
+                                                    <option value="empty">--Please Supplemental Exercise--</option>
+                                                    <option value="Bench Supplemental Lifts">----BENCH PRESS/PRESS SUPPLEMENTAL LIFTS----</option>
+                                                    <option value="Bench Press with different grip width">Bench Press with different grip width</option>
+                                                    <option value="Incline Press">Incline Press</option>
+                                                    <option value="Floor Press">Floor Press</option>
+                                                    <option value="Football Bar Bench Press">Football Bar Bench Press</option>
+                                                    <option value="Football Bar Inline Press">Football Bar Inline Press</option>
+                                                    <option value="Football Bar Press">Football Bar Press</option>
+                                                    <option value="Football Bar Floor Press">Football Bar Floor Press</option>
+                                                    <option value="Log Bar Bench Press">Log Bar Bench Press</option>
+                                                    <option value="Log Bar Incline Press">Log Bar Incline Press</option>
+                                                    <option value="Log Bar Floor Press">Log Bar Floor Press</option>
+                                                    <option value="Log Bar Press">Log Bar Press</option>
+                                                    <option value="Deadlift Supplemental Lifts">----DEADLIFT SUPPLEMENTAL LIFTS-----</option>
+                                                    <option value="Deficit Deadlift">Deficit Deadlift</option>
+                                                    <option value="Rack Pull">Rack Pull</option>
+                                                    <option value="Pull from Blocks">Pull from Blocks</option>
+                                                    <option value="Snatch Grip Deadlift">Snatch Grip Deadlift</option>
+                                                    <option value="Fat Bar Deadlift">Fat Bar Deadlift</option>
+                                                    <option value="Double Overhand Deadlift">Double Overhand Deadlift</option>
+                                                    <option value="Trap Bar Deadlift">Trap Bar Deadlift</option>
+                                                    <option value="Squat Supplemental Lifts">----SQAUTS SUPPLEMENTAL LIFTS-----</option>
+                                                    <option value="Front Squat">Front Squat</option>
+                                                    <option value="Box Squat">Box Squat- A Variety of different bars can be used as well as the front squat</option>
+                                                    <option value="Squat with Safety Squat Bar">Squat with Safety Squat Bar</option>
+                                                    <option value="Manta Ray Squa">Manta Ray Squat</option>
+                                                    </select>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>Sets</th>
+                                            <th>Intensity</th>
+                                            <th>Weight</th>
+                                            <th>Reps</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Set 2</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 3</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 4</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 5</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         <!-- Tab Six -->
                         <input type="radio" id="tabSix" name="tabs">
-                        <label for="tabSix"> Tab Six</label>
+                        <label for="tabSix">Friday</label>
                             <div class="tab">
 
-                                <div class="outerTab">
-
-                                </div>
-
-                                <div class="outerTab">
-
-                                </div>
-
-                                <div class="outerTab">
-
-                                </div>
+                                <table id="tracker1F">
+                                    <tbody>
+                                        <tr>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Main Lifts</th>
+                                            <th colspan="3" scope="row" >
+                                                <select name="mainLifts" id="mainLifts">
+                                                    <option value="">--Please Choose Exercise--</option>
+                                                    <option>Bench</option>
+                                                    <option>Military Press/Overhead Press</option>
+                                                    <option>Deadlift</option>
+                                                    <option>Sqaut</option>
+                                                    </select>
+                                            </th>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <th scope="col">Sets</th>
+                                            <th scope="col">Intensity</th>
+                                            <th scope="col">Weight</th>
+                                            <th scope="col">Reps</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                           
+                                        </tr>
+                                        <tr>
+                                            <td>Set 2</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 3</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Supplemental Lifts</th>
+                                            <th colspan="3">
+                                                <select name="supplementalLifts" id="supplementalLifts">
+                                                    <option value="empty">--Please Supplemental Exercise--</option>
+                                                    <option value="Bench Supplemental Lifts">----BENCH PRESS/PRESS SUPPLEMENTAL LIFTS----</option>
+                                                    <option value="Bench Press with different grip width">Bench Press with different grip width</option>
+                                                    <option value="Incline Press">Incline Press</option>
+                                                    <option value="Floor Press">Floor Press</option>
+                                                    <option value="Football Bar Bench Press">Football Bar Bench Press</option>
+                                                    <option value="Football Bar Inline Press">Football Bar Inline Press</option>
+                                                    <option value="Football Bar Press">Football Bar Press</option>
+                                                    <option value="Football Bar Floor Press">Football Bar Floor Press</option>
+                                                    <option value="Log Bar Bench Press">Log Bar Bench Press</option>
+                                                    <option value="Log Bar Incline Press">Log Bar Incline Press</option>
+                                                    <option value="Log Bar Floor Press">Log Bar Floor Press</option>
+                                                    <option value="Log Bar Press">Log Bar Press</option>
+                                                    <option value="Deadlift Supplemental Lifts">----DEADLIFT SUPPLEMENTAL LIFTS-----</option>
+                                                    <option value="Deficit Deadlift">Deficit Deadlift</option>
+                                                    <option value="Rack Pull">Rack Pull</option>
+                                                    <option value="Pull from Blocks">Pull from Blocks</option>
+                                                    <option value="Snatch Grip Deadlift">Snatch Grip Deadlift</option>
+                                                    <option value="Fat Bar Deadlift">Fat Bar Deadlift</option>
+                                                    <option value="Double Overhand Deadlift">Double Overhand Deadlift</option>
+                                                    <option value="Trap Bar Deadlift">Trap Bar Deadlift</option>
+                                                    <option value="Squat Supplemental Lifts">----SQAUTS SUPPLEMENTAL LIFTS-----</option>
+                                                    <option value="Front Squat">Front Squat</option>
+                                                    <option value="Box Squat">Box Squat- A Variety of different bars can be used as well as the front squat</option>
+                                                    <option value="Squat with Safety Squat Bar">Squat with Safety Squat Bar</option>
+                                                    <option value="Manta Ray Squa">Manta Ray Squat</option>
+                                                    </select>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>Sets</th>
+                                            <th>Intensity</th>
+                                            <th>Weight</th>
+                                            <th>Reps</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Set 2</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 3</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 4</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 5</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         <!-- Tab Seven -->
                         <input type="radio" id="tabSeven" name="tabs">
-                        <label for="tabSeven"> Tab Seven</label>
+                        <label for="tabSeven">Saturday </label>
                             <div class="tab">
 
-                                <div class="outerTab">
-
-                                </div>
-
-                                <div class="outerTab">
-
-                                </div>
-
-                                <div class="outerTab">
-
-                                </div>
+                                <table id="tracker1G">
+                                    <tbody>
+                                        <tr>
+                                            <th >&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Main Lifts</th>
+                                            <th colspan="3" scope="row" >
+                                                <select name="mainLifts" id="mainLifts">
+                                                    <option value="">--Please Choose Exercise--</option>
+                                                    <option>Bench</option>
+                                                    <option>Military Press/Overhead Press</option>
+                                                    <option>Deadlift</option>
+                                                    <option>Sqaut</option>
+                                                    </select>
+                                            </th>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <th scope="col">Sets</th>
+                                            <th scope="col">Intensity</th>
+                                            <th scope="col">Weight</th>
+                                            <th scope="col">Reps</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                           
+                                        </tr>
+                                        <tr>
+                                            <td>Set 2</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 3</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Supplemental Lifts</th>
+                                            <th colspan="3">
+                                                <select name="supplementalLifts" id="supplementalLifts">
+                                                    <option value="empty">--Please Supplemental Exercise--</option>
+                                                    <option value="Bench Supplemental Lifts">----BENCH PRESS/PRESS SUPPLEMENTAL LIFTS----</option>
+                                                    <option value="Bench Press with different grip width">Bench Press with different grip width</option>
+                                                    <option value="Incline Press">Incline Press</option>
+                                                    <option value="Floor Press">Floor Press</option>
+                                                    <option value="Football Bar Bench Press">Football Bar Bench Press</option>
+                                                    <option value="Football Bar Inline Press">Football Bar Inline Press</option>
+                                                    <option value="Football Bar Press">Football Bar Press</option>
+                                                    <option value="Football Bar Floor Press">Football Bar Floor Press</option>
+                                                    <option value="Log Bar Bench Press">Log Bar Bench Press</option>
+                                                    <option value="Log Bar Incline Press">Log Bar Incline Press</option>
+                                                    <option value="Log Bar Floor Press">Log Bar Floor Press</option>
+                                                    <option value="Log Bar Press">Log Bar Press</option>
+                                                    <option value="Deadlift Supplemental Lifts">----DEADLIFT SUPPLEMENTAL LIFTS-----</option>
+                                                    <option value="Deficit Deadlift">Deficit Deadlift</option>
+                                                    <option value="Rack Pull">Rack Pull</option>
+                                                    <option value="Pull from Blocks">Pull from Blocks</option>
+                                                    <option value="Snatch Grip Deadlift">Snatch Grip Deadlift</option>
+                                                    <option value="Fat Bar Deadlift">Fat Bar Deadlift</option>
+                                                    <option value="Double Overhand Deadlift">Double Overhand Deadlift</option>
+                                                    <option value="Trap Bar Deadlift">Trap Bar Deadlift</option>
+                                                    <option value="Squat Supplemental Lifts">----SQAUTS SUPPLEMENTAL LIFTS-----</option>
+                                                    <option value="Front Squat">Front Squat</option>
+                                                    <option value="Box Squat">Box Squat- A Variety of different bars can be used as well as the front squat</option>
+                                                    <option value="Squat with Safety Squat Bar">Squat with Safety Squat Bar</option>
+                                                    <option value="Manta Ray Squa">Manta Ray Squat</option>
+                                                    </select>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>Sets</th>
+                                            <th>Intensity</th>
+                                            <th>Weight</th>
+                                            <th>Reps</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Set 2</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 3</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 4</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set 5</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                     </div>
                 
             </main>
+            <footer>
+                <small>
+                    &copy;Created by Belita Ross. All Rights Reserved.
+                </small>
+            </footer>
+        
         </body>
-    <footer>
-        <small>
-            &copy;Created by Belita Ross. All Rights Reserved.
-        </small>
-    </footer>
-
+    
 </html>
