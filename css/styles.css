@@ -27,7 +27,7 @@ Header/Title color is #DCC789
     --table1E:#CCFFEC;
     --table1F:#9C7E4E;
     --table1G:#9791A3;
-
+    
 }
 /* General Styling */
 
@@ -77,7 +77,7 @@ body{
 }
 /* Finding Traingin Max styling */
 #trainMaxFinder{
-    background-color: none;
+    background-color: grey;
     
 }
 .maxlabel{
@@ -204,4 +204,16 @@ th{
     color:white;
 }
 
-/* 1 rep max table */
+/* designing select box*/
+select{
+    display:block;  
+    font-family: 'Libre Franklin', sans-serif; /*This makes the */
+}
+
+/* table */
+
+tr td:first-of-type{   /*This is selecting the first column, table data cells. so the 'sets' column*/
+    text-align: center;
+    border-bottom: black solid 1px;
+}
+
