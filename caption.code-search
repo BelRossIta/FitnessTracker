@@ -1,0 +1,27 @@
+# Query: caption
+# ContextLines: 1
+
+11 results - 2 files
+
+planner.html:
+  341                                  <table id="tracker1C">
+  342:                                        
+  343                                      <tbody>
+
+  468                                  <table id="tracker1D">
+  469:                                          
+  470                                      <tbody>
+
+  593                                  <table id="tracker1E">
+  595                                      <tbody>
+
+  719                                  <table id="tracker1F">
+  721                                      <tbody>
+
+  845                                  <table id="tracker1G">
+  847                                      <tbody>
+
+css\styles.css:
+  81  
+  82: #trainMaxCaption{
+  83      color:var(--labelForRepMaxTable);
